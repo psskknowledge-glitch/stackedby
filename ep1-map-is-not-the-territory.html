@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EP.1 แผนที่ไม่ใช่ดินแดน — StackedBy</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'IBM Plex Sans Thai', 'IBM Plex Sans', sans-serif;
+    background: #fafaf9;
+    color: #1c1917;
+    line-height: 1.8;
+    font-size: 17px;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    background: rgba(250,250,249,0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #e7e5e4;
+    padding: 0 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+  .logo { font-size: 20px; font-weight: 700; text-decoration: none; color: #1c1917; }
+  .logo span { color: #7c6fe0; }
+  .back-link { color: #78716c; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+  .back-link:hover { color: #1c1917; }
+
+  /* ─── ARTICLE HEADER ─── */
+  .article-header {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 32px;
+  }
+  .series-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #7c6fe0;
+    margin-bottom: 12px;
+  }
+  .series-label .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #7c6fe0;
+  }
+  .article-header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+  .book-ref {
+    font-size: 15px;
+    color: #78716c;
+  }
+  .book-ref em { font-style: italic; }
+
+  /* ─── ARTICLE BODY ─── */
+  .article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px 40px;
+  }
+  .article p {
+    margin-bottom: 20px;
+  }
+  .article h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 48px 0 16px;
+    letter-spacing: -0.3px;
+  }
+
+  /* ─── PRINCIPLE CARDS ─── */
+  .principles {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 24px;
+  }
+  .principles li {
+    padding: 16px 20px;
+    margin-bottom: 8px;
+    background: #fff;
+    border: 1px solid #e7e5e4;
+    border-radius: 12px;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  .principles li strong { color: #7c6fe0; }
+
+  /* ─── TAKEAWAY BOX ─── */
+  .takeaway-box {
+    background: #f5f3ff;
+    border-left: 4px solid #7c6fe0;
+    border-radius: 0 12px 12px 0;
+    padding: 24px 28px;
+    margin: 40px 0;
+  }
+  .takeaway-box h3 {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #7c6fe0;
+    margin-bottom: 16px;
+  }
+  .takeaway-box p {
+    margin-bottom: 14px;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+  .takeaway-box p:last-child { margin-bottom: 0; }
+
+  /* ─── EXPERIENCE SECTION ─── */
+  .exp-section {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px 40px;
+  }
+  .exp-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #e8a838;
+    margin-bottom: 16px;
+  }
+  .exp-label .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #e8a838;
+  }
+  .exp-card {
+    background: #fff;
+    border: 1px solid #e7e5e4;
+    border-left: 4px solid #e8a838;
+    border-radius: 0 12px 12px 0;
+    padding: 28px;
+  }
+  .exp-card p {
+    margin-bottom: 16px;
+    line-height: 1.8;
+  }
+  .exp-card p:last-child { margin-bottom: 0; }
+  .exp-card .highlight { font-weight: 600; color: #e8a838; }
+
+  /* ─── CHANGELOG ─── */
+  .changelog {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 24px 16px;
+  }
+  .changelog-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 13px;
+    font-weight: 500;
+    color: #78716c;
+    padding: 8px 0;
+    font-family: inherit;
+  }
+  .changelog-toggle:hover { color: #1c1917; }
+  .changelog-toggle .arrow { transition: transform 0.2s; font-size: 10px; }
+  .changelog-toggle .arrow.open { transform: rotate(90deg); }
+  .changelog-entries {
+    display: none;
+    padding: 12px 0 0 18px;
+    border-left: 2px solid #e7e5e4;
+    margin-left: 4px;
+  }
+  .changelog-entries.open { display: block; }
+  .changelog-entry {
+    position: relative;
+    padding: 0 0 16px 20px;
+    font-size: 14px;
+    color: #78716c;
+    line-height: 1.5;
+  }
+  .changelog-entry::before {
+    content: '';
+    position: absolute;
+    left: -7px;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #7c6fe0;
+    border: 2px solid #fafaf9;
+  }
+  .changelog-entry .date { font-weight: 600; color: #1c1917; display: block; }
+
+  /* ─── NEXT EP ─── */
+  .next-ep {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 16px 24px 80px;
+  }
+  .next-ep-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    border: 1px dashed #e7e5e4;
+    border-radius: 12px;
+    padding: 20px 24px;
+  }
+  .next-ep-card .label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #78716c; }
+  .next-ep-card .title { font-size: 16px; font-weight: 600; margin-top: 4px; }
+  .next-ep-card .coming { font-size: 13px; color: #78716c; font-weight: 500; background: #f5f5f4; padding: 6px 14px; border-radius: 20px; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    border-top: 1px solid #e7e5e4;
+    padding: 32px 24px;
+    text-align: center;
+    font-size: 14px;
+    color: #78716c;
+  }
+
+  @media (max-width: 640px) {
+    .article-header h1 { font-size: 24px; }
+    .next-ep-card { flex-direction: column; align-items: flex-start; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Stacked<span>By</span></a>
+    <a href="index.html" class="back-link">&larr; กลับหน้าหลัก</a>
+  </div>
+</nav>
+
+<header class="article-header">
+  <div class="series-label"><span class="dot"></span> The Great Mental Models Series | EP.1</div>
+  <h1>แผนที่ไม่ใช่ดินแดน</h1>
+  <p class="book-ref">จากหนังสือ <em>The Great Mental Models Vol.1</em> โดย Shane Parrish</p>
+</header>
+
+<article class="article">
+
+  <p>คุณเคยไหม — วางแผนมาอย่างดี ข้อมูลครบ วิเคราะห์แล้ว แต่พอลงมือทำจริง ทุกอย่างไม่เป็นอย่างที่คิด</p>
+
+  <p>ไม่ใช่เพราะคุณวิเคราะห์ผิด แต่เพราะสิ่งที่คุณใช้วิเคราะห์มันไม่ใช่ความจริงทั้งหมดตั้งแต่แรก</p>
+
+  <p>ทุกวันเราตัดสินใจโดยอาศัย "แผนที่" — งบการเงิน, คู่มือการทำงาน, คำแนะนำจากคนรอบข้าง, ข่าวที่อ่านทุกเช้า, แม้แต่ประสบการณ์ในอดีตของตัวเอง สิ่งเหล่านี้ล้วนเป็นเวอร์ชันย่อของความจริง มันมีประโยชน์ แต่มันไม่เคยสมบูรณ์</p>
+
+  <p>Shane Parrish เปิดหนังสือ The Great Mental Models ด้วยบทนี้เป็นบทแรก ไม่ใช่เรื่องบังเอิญ เพราะนี่คือกับดักพื้นฐานที่สุดของการคิด — เราใช้แผนที่จนลืมไปว่ามันเป็นแค่ "แผนที่" ไม่ใช่ "ดินแดน" จริง</p>
+
+  <h2>แนวคิดหลัก</h2>
+
+  <p>Alfred Korzybski นักคณิตศาสตร์ชาวโปแลนด์ วางหลักไว้ 4 ข้อที่ตรงไปตรงมามากๆ:</p>
+
+  <ol class="principles">
+    <li><strong>แผนที่ถูกออกแบบมาเพื่อจุดประสงค์เฉพาะ</strong> — แผนที่รถไฟใต้ดินลอนดอนมีประโยชน์กับนักท่องเที่ยว แต่คนขับรถไฟไม่ใช้มันเลย</li>
+    <li><strong>แผนที่ที่ดีควรพาคุณไปถึงจุดหมายได้</strong> — ถ้าแผนที่บอกว่า Dresden อยู่ระหว่าง Paris กับ Warsaw คุณควรใช้มันเดินทางได้จริง</li>
+    <li><strong>แผนที่ไม่ใช่ประสบการณ์จริง</strong> — แผนที่สถานี Covent Garden ไม่ได้บอกคุณว่ายืนอยู่ในสถานีนั้นรู้สึกยังไง</li>
+    <li><strong>ถ้าจะทำแผนที่ให้สมบูรณ์แบบ</strong> คุณต้องมีคู่มืออธิบายแผนที่ แล้วก็คู่มืออธิบายคู่มือ วนไปเรื่อยๆ ไม่จบ — ซึ่งไม่มีใครทำได้จริง</li>
+  </ol>
+
+  <h2>อันตรายที่เกิดขึ้นเมื่อเชื่อแผนที่มากเกินไป</h2>
+
+  <p>เมื่อเราเอาแผนที่มาแทนความจริง เราจะหยุดรับข้อมูลใหม่ เราสร้างกฎตายตัว ใช้ policy เดิมซ้ำๆ ทั้งที่โลกเปลี่ยนไปแล้ว ฟิสิกส์ของนิวตันใช้งานมา 200 กว่าปี จนไอน์สไตน์มาเขียนแผนที่ใหม่ ของเก่าไม่ได้ผิด แต่ไม่ครบ สิ่งที่นักฟิสิกส์ทำได้ดีคือเขารู้ชัดว่าแผนที่ใบไหนใช้ได้ถึงตรงไหน แต่คนทั่วไปไม่ค่อยทำแบบนั้น</p>
+
+  <h2>3 สิ่งที่ต้องจำเวลาใช้แผนที่</h2>
+
+  <div class="takeaway-box">
+    <h3>Key Takeaways</h3>
+    <p><strong>1. ความจริงคือ update ล่าสุดเสมอ</strong> — แผนที่ดีแค่ไหนก็ล้าสมัยได้ Stereotype คือแผนที่แบบหนึ่ง บางทีมันช่วยให้เราประมวลผลข้อมูลเร็วขึ้น แต่คนจริงๆ ซับซ้อนกว่า stereotype เสมอ เมื่อดินแดนเปลี่ยน แผนที่ต้องเปลี่ยนตาม</p>
+    <p><strong>2. ดูว่าใครเป็นคนวาด</strong> — แผนที่ทุกใบมีมุมมองของผู้สร้างฝังอยู่ พรมแดนตะวันออกกลางหลังสงครามโลกครั้งที่ 1 ไม่ได้สะท้อนวัฒนธรรมท้องถิ่น แต่สะท้อนผลประโยชน์ของอังกฤษกับฝรั่งเศส ทุกครั้งที่รับข้อมูลใหม่ ให้ถามก่อนว่า "คนนี้วาดแผนที่เพื่ออะไร?"</p>
+    <p><strong>3. แผนที่เปลี่ยนดินแดนได้</strong> — Jane Jacobs เตือนว่านักผังเมืองวาดโมเดลเมืองในอุดมคติ แล้วบังคับเมืองจริงให้เข้ากับโมเดล ผลคือเมืองพัง เวลาเชื่อโมเดลมากเกินไป เราจะเริ่มบิดความจริงให้เข้ากับแผนที่ แทนที่จะทำกลับกัน</p>
+  </div>
+
+</article>
+
+<!-- STACKED EXPERIENCE -->
+<section class="exp-section">
+  <div class="exp-label"><span class="dot"></span> Stacked Experience</div>
+  <div class="exp-card">
+    <p><strong>จากหน้างานจริง — เรื่องของ Standard Operating Model ที่ไม่มีใครอัปเดต</strong></p>
+
+    <p>ในฐานะคนทำ Transformation ขององค์กร ผมเห็นปัญหานี้ซ้ำแล้วซ้ำเล่า</p>
+
+    <p>องค์กรส่วนใหญ่สร้าง Standard Operating Model ออกมาเป็นเอกสารครั้งเดียว แล้วจบ สิ่งที่ตามมาคือสองปัญหาที่เจอบ่อยมาก:</p>
+
+    <p><span class="highlight">1. ไม่มี Process Owner</span> — ไม่มีใครรับผิดชอบอัปเดตแผนที่การทำงานนี้ให้ตรงกับความเป็นจริง มันกลายเป็นเอกสารที่นอนตายอยู่ใน SharePoint</p>
+
+    <p><span class="highlight">2. มี Process Owner แต่ไม่มี Updating System</span> — มีคนรับผิดชอบ แต่ไม่มีกลไกที่บังคับให้อัปเดต ผลคือความจริงหน้างานกับแผนที่แยกออกจากกันเรื่อยๆ โดยไม่มีใครรู้ตัว</p>
+
+    <p>แล้วใครได้รับผลเสีย? ทุกคน — แต่ผลเสียจะไม่ปรากฏทันที มันจะปรากฏก็ต่อเมื่อแผนที่ถูกหยิบมาใช้อีกครั้ง แล้วพบว่ามันไม่ตรงกับความจริงอีกแล้ว</p>
+
+    <p>ในโปรเจค Process Improvement เกือบทุกครั้ง Phase แรกๆ ที่ต้องทำคือเดินไปหา Stakeholders แล้วถามว่า "แผนที่นี้ยังเป็นเวอร์ชันล่าสุดไหม? มีอะไรเปลี่ยนไปบ้าง?" ซึ่งถ้าจ้าง Consultant เข้ามาทำ ค่าใช้จ่ายตรงนี้ตีเป็นตัวเงินได้ชัดเจนมาก — ยิ่ง Phase อัปเดตแผนที่ยาวนานเท่าไร ก็ยิ่งหมายความว่าแผนที่เดิมล้าสมัยมากเท่านั้น</p>
+
+    <p>Shane Parrish พูดถูก — ใช้แผนที่ แต่อย่าบูชาแผนที่ และที่สำคัญ <strong>ต้องมีคนรับผิดชอบอัปเดตมัน</strong></p>
+  </div>
+</section>
+
+<!-- CHANGELOG -->
+<div class="changelog">
+  <button class="changelog-toggle" onclick="toggleChangelog()">
+    <span class="arrow" id="arrow">&#9654;</span> Changelog
+  </button>
+  <div class="changelog-entries" id="changelog">
+    <div class="changelog-entry">
+      <span class="date">6 เม.ย. 2026</span>
+      เผยแพร่ EP.1 พร้อม Stacked Experience จากงาน Transformation
+    </div>
+  </div>
+</div>
+
+<!-- NEXT EP -->
+<div class="next-ep">
+  <div class="next-ep-card">
+    <div>
+      <div class="label">EP.2</div>
+      <div class="title">Circle of Competence</div>
+    </div>
+    <span class="coming">เร็วๆ นี้</span>
+  </div>
+</div>
+
+<footer>
+  <p><strong>StackedBy</strong> — Books × Experience × Frameworks</p>
+</footer>
+
+<script>
+function toggleChangelog() {
+  const el = document.getElementById('changelog');
+  const arrow = document.getElementById('arrow');
+  el.classList.toggle('open');
+  arrow.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
