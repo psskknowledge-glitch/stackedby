@@ -13,7 +13,7 @@
     font-family: 'IBM Plex Sans Thai', 'IBM Plex Sans', sans-serif;
     background: #fafaf9;
     color: #1c1917;
-    line-height: 1.8;
+    line-height: 1.85;
     font-size: 17px;
   }
 
@@ -58,10 +58,7 @@
     margin-bottom: 12px;
   }
   .series-label .dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #7c6fe0;
+    width: 6px; height: 6px; border-radius: 50%; background: #7c6fe0;
   }
   .article-header h1 {
     font-size: 32px;
@@ -70,10 +67,7 @@
     line-height: 1.3;
     margin-bottom: 8px;
   }
-  .book-ref {
-    font-size: 15px;
-    color: #78716c;
-  }
+  .book-ref { font-size: 15px; color: #78716c; }
   .book-ref em { font-style: italic; }
 
   /* ─── ARTICLE BODY ─── */
@@ -82,9 +76,7 @@
     margin: 0 auto;
     padding: 0 24px 40px;
   }
-  .article p {
-    margin-bottom: 20px;
-  }
+  .article p { margin-bottom: 20px; }
   .article h2 {
     font-size: 22px;
     font-weight: 700;
@@ -96,16 +88,16 @@
   .principles {
     list-style: none;
     padding: 0;
-    margin-bottom: 24px;
+    margin: 24px 0;
   }
   .principles li {
-    padding: 16px 20px;
-    margin-bottom: 8px;
+    padding: 18px 22px;
+    margin-bottom: 10px;
     background: #fff;
     border: 1px solid #e7e5e4;
     border-radius: 12px;
     font-size: 16px;
-    line-height: 1.7;
+    line-height: 1.75;
   }
   .principles li strong { color: #7c6fe0; }
 
@@ -118,18 +110,10 @@
     margin: 40px 0;
   }
   .takeaway-box h3 {
-    font-size: 13px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #7c6fe0;
-    margin-bottom: 16px;
+    font-size: 13px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 1px; color: #7c6fe0; margin-bottom: 16px;
   }
-  .takeaway-box p {
-    margin-bottom: 14px;
-    font-size: 16px;
-    line-height: 1.75;
-  }
+  .takeaway-box p { margin-bottom: 14px; font-size: 16px; line-height: 1.75; }
   .takeaway-box p:last-child { margin-bottom: 0; }
 
   /* ─── EXPERIENCE SECTION ─── */
@@ -139,22 +123,11 @@
     padding: 0 24px 40px;
   }
   .exp-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: #e8a838;
-    margin-bottom: 16px;
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 1.5px; color: #e8a838; margin-bottom: 16px;
   }
-  .exp-label .dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #e8a838;
-  }
+  .exp-label .dot { width: 6px; height: 6px; border-radius: 50%; background: #e8a838; }
   .exp-card {
     background: #fff;
     border: 1px solid #e7e5e4;
@@ -162,88 +135,62 @@
     border-radius: 0 12px 12px 0;
     padding: 28px;
   }
-  .exp-card p {
-    margin-bottom: 16px;
-    line-height: 1.8;
-  }
+  .exp-card p { margin-bottom: 16px; line-height: 1.85; }
   .exp-card p:last-child { margin-bottom: 0; }
+  .exp-card h4 { font-size: 18px; font-weight: 600; margin: 24px 0 12px; color: #1c1917; }
+  .exp-card h4:first-child { margin-top: 0; }
   .exp-card .highlight { font-weight: 600; color: #e8a838; }
+
+  /* ─── DIVIDER ─── */
+  .section-divider {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .section-divider hr { border: none; border-top: 1px solid #e7e5e4; }
 
   /* ─── CHANGELOG ─── */
   .changelog {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 32px 24px 16px;
+    max-width: 720px; margin: 0 auto; padding: 32px 24px 16px;
   }
   .changelog-toggle {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    font-size: 13px;
-    font-weight: 500;
-    color: #78716c;
-    padding: 8px 0;
-    font-family: inherit;
+    display: flex; align-items: center; gap: 8px; cursor: pointer;
+    background: none; border: none; font-size: 13px; font-weight: 500;
+    color: #78716c; padding: 8px 0; font-family: inherit;
   }
   .changelog-toggle:hover { color: #1c1917; }
   .changelog-toggle .arrow { transition: transform 0.2s; font-size: 10px; }
   .changelog-toggle .arrow.open { transform: rotate(90deg); }
   .changelog-entries {
-    display: none;
-    padding: 12px 0 0 18px;
-    border-left: 2px solid #e7e5e4;
-    margin-left: 4px;
+    display: none; padding: 12px 0 0 18px;
+    border-left: 2px solid #e7e5e4; margin-left: 4px;
   }
   .changelog-entries.open { display: block; }
   .changelog-entry {
-    position: relative;
-    padding: 0 0 16px 20px;
-    font-size: 14px;
-    color: #78716c;
-    line-height: 1.5;
+    position: relative; padding: 0 0 16px 20px;
+    font-size: 14px; color: #78716c; line-height: 1.5;
   }
   .changelog-entry::before {
-    content: '';
-    position: absolute;
-    left: -7px;
-    top: 6px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #7c6fe0;
-    border: 2px solid #fafaf9;
+    content: ''; position: absolute; left: -7px; top: 6px;
+    width: 10px; height: 10px; border-radius: 50%;
+    background: #7c6fe0; border: 2px solid #fafaf9;
   }
   .changelog-entry .date { font-weight: 600; color: #1c1917; display: block; }
 
   /* ─── NEXT EP ─── */
-  .next-ep {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 16px 24px 80px;
-  }
+  .next-ep { max-width: 720px; margin: 0 auto; padding: 16px 24px 80px; }
   .next-ep-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #fff;
-    border: 1px dashed #e7e5e4;
-    border-radius: 12px;
-    padding: 20px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    background: #fff; border: 1px dashed #e7e5e4;
+    border-radius: 12px; padding: 20px 24px;
   }
   .next-ep-card .label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #78716c; }
   .next-ep-card .title { font-size: 16px; font-weight: 600; margin-top: 4px; }
   .next-ep-card .coming { font-size: 13px; color: #78716c; font-weight: 500; background: #f5f5f4; padding: 6px 14px; border-radius: 20px; }
 
-  /* ─── FOOTER ─── */
   footer {
-    border-top: 1px solid #e7e5e4;
-    padding: 32px 24px;
-    text-align: center;
-    font-size: 14px;
-    color: #78716c;
+    border-top: 1px solid #e7e5e4; padding: 32px 24px;
+    text-align: center; font-size: 14px; color: #78716c;
   }
 
   @media (max-width: 640px) {
@@ -269,36 +216,24 @@
 
 <article class="article">
 
-  <p>คุณเคยไหม — วางแผนมาอย่างดี ข้อมูลครบ วิเคราะห์แล้ว แต่พอลงมือทำจริง ทุกอย่างไม่เป็นอย่างที่คิด</p>
+  <h2>ถ้าแผนที่ไม่ใช่พื้นที่จริง — แล้วทำไมเราถึงยังเชื่อมันโดยไม่ตั้งคำถาม?</h2>
 
-  <p>ไม่ใช่เพราะคุณวิเคราะห์ผิด แต่เพราะสิ่งที่คุณใช้วิเคราะห์มันไม่ใช่ความจริงทั้งหมดตั้งแต่แรก</p>
+  <p>แนวคิดหลักของบทนี้คือ "The Map Is Not the Territory" — แผนที่ไม่ใช่พื้นที่จริง ผู้เขียนใช้ "แผนที่" เป็น Representation หรือตัวแทนของข้อมูลทุกรูปแบบที่เราใช้ทำความเข้าใจโลกจริง ไม่ว่าจะเป็นรายงาน แผนผังกระบวนการ หรือแม้แต่ข่าวสารรายวัน เราสามารถใช้แผนที่เหล่านี้ได้ แต่มันไม่มีทางประกอบไปด้วยข้อมูลทุกด้านของพื้นที่จริงได้ทั้งหมด และนี่คือสิ่งที่ Shane Parrish กำลังสอน — เราต้องรู้จักรับข้อมูล (Take Information) ให้ดี</p>
 
-  <p>ทุกวันเราตัดสินใจโดยอาศัย "แผนที่" — งบการเงิน, คู่มือการทำงาน, คำแนะนำจากคนรอบข้าง, ข่าวที่อ่านทุกเช้า, แม้แต่ประสบการณ์ในอดีตของตัวเอง สิ่งเหล่านี้ล้วนเป็นเวอร์ชันย่อของความจริง มันมีประโยชน์ แต่มันไม่เคยสมบูรณ์</p>
+  <p>ผมคิดว่าเขาเลือกเปิดหนังสือด้วยแนวคิดนี้เพราะมันเรียบง่ายแต่ทรงพลัง การคิดที่ดีไม่ได้เริ่มจากการวิเคราะห์ที่เก่งกาจ แต่เริ่มจากการย่อยข้อมูลที่ได้รับมาอย่างรอบคอบเสียก่อน หากข้อมูลตั้งต้นมีปัญหา ต่อให้วิเคราะห์ดีแค่ไหน ผลลัพธ์ก็จะบิดเบือนตั้งแต่จุดเริ่มต้น</p>
 
-  <p>Shane Parrish เปิดหนังสือ The Great Mental Models ด้วยบทนี้เป็นบทแรก ไม่ใช่เรื่องบังเอิญ เพราะนี่คือกับดักพื้นฐานที่สุดของการคิด — เราใช้แผนที่จนลืมไปว่ามันเป็นแค่ "แผนที่" ไม่ใช่ "ดินแดน" จริง</p>
-
-  <h2>แนวคิดหลัก</h2>
-
-  <p>Alfred Korzybski นักคณิตศาสตร์ชาวโปแลนด์ วางหลักไว้ 4 ข้อที่ตรงไปตรงมามากๆ:</p>
+  <h2>ข้อจำกัด 4 ประการของ "แผนที่" ทุกใบ</h2>
 
   <ol class="principles">
-    <li><strong>แผนที่ถูกออกแบบมาเพื่อจุดประสงค์เฉพาะ</strong> — แผนที่รถไฟใต้ดินลอนดอนมีประโยชน์กับนักท่องเที่ยว แต่คนขับรถไฟไม่ใช้มันเลย</li>
-    <li><strong>แผนที่ที่ดีควรพาคุณไปถึงจุดหมายได้</strong> — ถ้าแผนที่บอกว่า Dresden อยู่ระหว่าง Paris กับ Warsaw คุณควรใช้มันเดินทางได้จริง</li>
-    <li><strong>แผนที่ไม่ใช่ประสบการณ์จริง</strong> — แผนที่สถานี Covent Garden ไม่ได้บอกคุณว่ายืนอยู่ในสถานีนั้นรู้สึกยังไง</li>
-    <li><strong>ถ้าจะทำแผนที่ให้สมบูรณ์แบบ</strong> คุณต้องมีคู่มืออธิบายแผนที่ แล้วก็คู่มืออธิบายคู่มือ วนไปเรื่อยๆ ไม่จบ — ซึ่งไม่มีใครทำได้จริง</li>
+    <li><strong>ข้อมูลทุกชิ้นมีอคติ</strong> — ผู้สร้างข้อมูลทุกคนมีมุมมองและจุดประสงค์ของตัวเอง เหมือนนักทำแผนที่ที่ต้องเลือกว่าจะใส่อะไรลงไปและตัดอะไรออก การเลือกเหล่านั้นสะท้อนถึงสิ่งที่ผู้สร้างให้ความสำคัญ ไม่ใช่ภาพที่เป็นกลางของความเป็นจริง</li>
+    <li><strong>ข้อมูลถูกออกแบบมาสำหรับกลุ่มเป้าหมายเฉพาะ</strong> — ไม่มีข้อมูลชิ้นใดที่ครอบคลุมทุกมุมมองให้ทุกคนได้ เห็นได้ชัดจากหนังสือพิมพ์ที่แบ่งเป็นหมวดเศรษฐกิจ หมวดกีฬา หมวดบันเทิง และแม้แต่ในหมวดเศรษฐกิจเอง ก็ไม่สามารถครอบคลุมทุกแง่มุมของเศรษฐศาสตร์ได้ทั้งหมด ข้อมูลแต่ละชิ้นจึงเป็นเพียง "มุมหนึ่ง" ของเรื่องราวทั้งหมด</li>
+    <li><strong>ข้อมูลตัดรายละเอียดบางส่วนออก แต่ยังใช้อ้างอิงได้</strong> — แผนที่ที่ดีไม่จำเป็นต้องมีทุกรายละเอียดเท่าพื้นที่จริง แต่ต้องรักษา "ความสัมพันธ์เชิงโครงสร้าง" ไว้ให้ถูกต้อง เช่น ถ้าแผนที่ระบุว่า Dresden อยู่ระหว่าง Paris กับ Warsaw ในโลกจริงก็ต้องเป็นเช่นนั้นด้วย ตราบใดที่โครงสร้างยังถูก เราก็ยังใช้นำทางได้</li>
+    <li><strong>ข้อมูลไม่ได้หยุดนิ่ง</strong> — สิ่งที่เป็นจริงเมื่อเดือนก่อนอาจไม่เป็นจริงในวันนี้ ฟิสิกส์ของนิวตันใช้งานมา 200 กว่าปี จนไอน์สไตน์แสดงให้เห็นว่ามันไม่สมบูรณ์ กฎของนิวตันยังใช้ได้ดีในชีวิตประจำวัน แต่ไม่ใช่ภาพที่สมบูรณ์ ถ้าแม้แต่โมเดลที่พิสูจน์มาแล้ว 200 ปียังพบว่าไม่ครบถ้วน ข้อมูลใดๆ ที่เราพึ่งพาอยู่ก็อาจไม่สมบูรณ์เช่นกัน</li>
   </ol>
 
-  <h2>อันตรายที่เกิดขึ้นเมื่อเชื่อแผนที่มากเกินไป</h2>
-
-  <p>เมื่อเราเอาแผนที่มาแทนความจริง เราจะหยุดรับข้อมูลใหม่ เราสร้างกฎตายตัว ใช้ policy เดิมซ้ำๆ ทั้งที่โลกเปลี่ยนไปแล้ว ฟิสิกส์ของนิวตันใช้งานมา 200 กว่าปี จนไอน์สไตน์มาเขียนแผนที่ใหม่ ของเก่าไม่ได้ผิด แต่ไม่ครบ สิ่งที่นักฟิสิกส์ทำได้ดีคือเขารู้ชัดว่าแผนที่ใบไหนใช้ได้ถึงตรงไหน แต่คนทั่วไปไม่ค่อยทำแบบนั้น</p>
-
-  <h2>3 สิ่งที่ต้องจำเวลาใช้แผนที่</h2>
-
   <div class="takeaway-box">
-    <h3>Key Takeaways</h3>
-    <p><strong>1. ความจริงคือ update ล่าสุดเสมอ</strong> — แผนที่ดีแค่ไหนก็ล้าสมัยได้ Stereotype คือแผนที่แบบหนึ่ง บางทีมันช่วยให้เราประมวลผลข้อมูลเร็วขึ้น แต่คนจริงๆ ซับซ้อนกว่า stereotype เสมอ เมื่อดินแดนเปลี่ยน แผนที่ต้องเปลี่ยนตาม</p>
-    <p><strong>2. ดูว่าใครเป็นคนวาด</strong> — แผนที่ทุกใบมีมุมมองของผู้สร้างฝังอยู่ พรมแดนตะวันออกกลางหลังสงครามโลกครั้งที่ 1 ไม่ได้สะท้อนวัฒนธรรมท้องถิ่น แต่สะท้อนผลประโยชน์ของอังกฤษกับฝรั่งเศส ทุกครั้งที่รับข้อมูลใหม่ ให้ถามก่อนว่า "คนนี้วาดแผนที่เพื่ออะไร?"</p>
-    <p><strong>3. แผนที่เปลี่ยนดินแดนได้</strong> — Jane Jacobs เตือนว่านักผังเมืองวาดโมเดลเมืองในอุดมคติ แล้วบังคับเมืองจริงให้เข้ากับโมเดล ผลคือเมืองพัง เวลาเชื่อโมเดลมากเกินไป เราจะเริ่มบิดความจริงให้เข้ากับแผนที่ แทนที่จะทำกลับกัน</p>
+    <h3>บทเรียนจากทั้ง 4 ข้อ</h3>
+    <p>หากต้องการคิดอย่างคมชัด ต้องเริ่มจากการตั้งคำถามกับข้อมูลที่ได้รับอย่างคมชัดเช่นกัน เมื่อใดก็ตามที่เราใช้แผนที่ โมเดล หรือรายงาน เราต้องตระหนักว่ามันถูกย่อให้ง่ายขึ้น ถูกออกแบบมาสำหรับกลุ่มเป้าหมายและวัตถุประสงค์เฉพาะ และอาจไม่ได้ถูกอัปเดตให้เป็นปัจจุบัน ที่สำคัญคือต้องไม่ปล่อยให้ข้อมูลเหล่านี้ขัดขวางเราจากการค้นพบสิ่งใหม่ หรือจากการอัปเดตความเข้าใจเดิมที่อาจล้าสมัยไปแล้ว</p>
   </div>
 
 </article>
@@ -307,23 +242,34 @@
 <section class="exp-section">
   <div class="exp-label"><span class="dot"></span> Stacked Experience</div>
   <div class="exp-card">
-    <p><strong>จากหน้างานจริง — เรื่องของ Standard Operating Model ที่ไม่มีใครอัปเดต</strong></p>
+    <p>หลังจากอ่านบทนี้จบ สิ่งที่ผมนึกถึงทันทีคือสิ่งที่เจอในงาน Business Transformation ทุกวัน หลักการ "The Map Is Not the Territory" ไม่ได้เป็นแค่ทฤษฎีในหนังสือ แต่เป็นปัญหาที่กินเงินและกินเวลาขององค์กรจริงๆ ทั้งในระดับปฏิบัติการและระดับบริหาร</p>
 
-    <p>ในฐานะคนทำ Transformation ขององค์กร ผมเห็นปัญหานี้ซ้ำแล้วซ้ำเล่า</p>
+    <h4>ระดับปฏิบัติการ — เอกสารกระบวนการที่ล้าสมัย</h4>
 
-    <p>องค์กรส่วนใหญ่สร้าง Standard Operating Model ออกมาเป็นเอกสารครั้งเดียว แล้วจบ สิ่งที่ตามมาคือสองปัญหาที่เจอบ่อยมาก:</p>
+    <p>ในงาน Business Transformation สิ่งแรกที่ต้องทำคือเข้าใจกระบวนการทำงานปัจจุบันขององค์กร (As-Is Process) ก่อนที่จะออกแบบกระบวนการใหม่ได้ วิธีที่เร็วที่สุดคือการทำ Desktop Review — นั่งอ่านเอกสารที่องค์กรมีอยู่แล้ว เช่น แผนผังกระบวนการ (Process Flow) และคู่มือปฏิบัติงาน (SOP) เพื่อสร้างความเข้าใจเบื้องต้นก่อนลงไปสัมภาษณ์หน้างานจริง</p>
 
-    <p><span class="highlight">1. ไม่มี Process Owner</span> — ไม่มีใครรับผิดชอบอัปเดตแผนที่การทำงานนี้ให้ตรงกับความเป็นจริง มันกลายเป็นเอกสารที่นอนตายอยู่ใน SharePoint</p>
+    <p>แต่จากประสบการณ์ทั้งในฐานะที่ปรึกษาที่เข้าไปช่วยลูกค้า และในฐานะฝั่งลูกค้าที่ต้องจ้างที่ปรึกษาเข้ามา ปัญหาที่เจอซ้ำแล้วซ้ำเล่าคือเอกสารเหล่านี้ไม่เคยถูกอัปเดตให้ตรงกับสิ่งที่เกิดขึ้นจริง ขั้นตอนบางอย่างถูกเพิ่มเข้ามาแต่ไม่ได้บันทึก บางขั้นตอนถูกยกเลิกไปแล้วแต่ยังอยู่ในเอกสาร นี่คือตัวอย่างที่ชัดเจนของ "The Map Is Not the Territory" — เอกสารกระบวนการคือ "แผนที่" ส่วนการทำงานจริงหน้างานคือ "พื้นที่จริง"</p>
 
-    <p><span class="highlight">2. มี Process Owner แต่ไม่มี Updating System</span> — มีคนรับผิดชอบ แต่ไม่มีกลไกที่บังคับให้อัปเดต ผลคือความจริงหน้างานกับแผนที่แยกออกจากกันเรื่อยๆ โดยไม่มีใครรู้ตัว</p>
+    <p>แม้ว่าเราจะรู้ตัวและไปยืนยันกับ Stakeholders ก็ตาม หากแผนที่ไม่ได้ถูกอัปเดตมาเป็นเวลานาน ที่ปรึกษาก็ยังต้องเสียเวลาอย่างน้อยหนึ่งเดือนในการสัมภาษณ์ผู้ปฏิบัติงานทีละคน แล้วมาร่างแผนผังกระบวนการขึ้นมาใหม่ตั้งแต่ต้น ซึ่งเป็นต้นทุนทั้งเวลาและงบประมาณที่ไม่จำเป็นต้องเกิดขึ้นเลย หากองค์กรมีระบบในการดูแลเอกสารเหล่านี้ให้เป็นปัจจุบันอยู่เสมอ</p>
 
-    <p>แล้วใครได้รับผลเสีย? ทุกคน — แต่ผลเสียจะไม่ปรากฏทันที มันจะปรากฏก็ต่อเมื่อแผนที่ถูกหยิบมาใช้อีกครั้ง แล้วพบว่ามันไม่ตรงกับความจริงอีกแล้ว</p>
+    <h4>ระดับบริหาร — รายงานที่ไม่เคยถูกตั้งคำถาม</h4>
 
-    <p>ในโปรเจค Process Improvement เกือบทุกครั้ง Phase แรกๆ ที่ต้องทำคือเดินไปหา Stakeholders แล้วถามว่า "แผนที่นี้ยังเป็นเวอร์ชันล่าสุดไหม? มีอะไรเปลี่ยนไปบ้าง?" ซึ่งถ้าจ้าง Consultant เข้ามาทำ ค่าใช้จ่ายตรงนี้ตีเป็นตัวเงินได้ชัดเจนมาก — ยิ่ง Phase อัปเดตแผนที่ยาวนานเท่าไร ก็ยิ่งหมายความว่าแผนที่เดิมล้าสมัยมากเท่านั้น</p>
+    <p>ปัญหาเดียวกันเกิดขึ้นในระดับบริหารเช่นกัน แต่อยู่ในรูปแบบของรายงานที่ใช้ประกอบการตัดสินใจ ผู้บริหารหลายท่านคุ้นชินกับการดูรายงานในรูปแบบและมุมมองเดิมๆ ที่ใช้มาหลายปี เมื่อทีมงานจะเสนอปรับเปลี่ยนรูปแบบรายงาน สิ่งที่มักได้ยินคือ "ผู้บริหารที่นี่ชอบดูแบบนี้"</p>
 
-    <p>Shane Parrish พูดถูก — ใช้แผนที่ แต่อย่าบูชาแผนที่ และที่สำคัญ <strong>ต้องมีคนรับผิดชอบอัปเดตมัน</strong></p>
+    <p>ซึ่งอาจเป็นเรื่องจริง แต่คำถามที่สำคัญกว่าและมักถูกมองข้ามคือ — ความท้าทายของธุรกิจที่เผชิญอยู่ในปัจจุบันคืออะไร? ข้อมูลที่ดูอยู่ทุกวันช่วยให้ตัดสินใจได้ดีขึ้นจริงหรือไม่ หรือเป็นเพียงความคุ้นชิน? รายงานที่ใช้มานานโดยไม่เคยถูกทบทวนก็เป็น "แผนที่เก่า" เช่นกัน มันอาจเคยสะท้อนความเป็นจริงของธุรกิจ แต่เมื่อบริบทเปลี่ยน แผนที่เดิมก็อาจพาไปผิดทาง</p>
   </div>
 </section>
+
+<div class="section-divider"><hr></div>
+
+<!-- KEY TAKEAWAY -->
+<article class="article">
+  <div class="takeaway-box">
+    <h3>สิ่งที่ได้จากบทนี้</h3>
+    <p>ปัญหาของการยึดติดกับ "แผนที่" โดยไม่ตรวจสอบว่ามันยังตรงกับ "พื้นที่จริง" หรือไม่ เกิดขึ้นได้ตั้งแต่ระดับปฏิบัติการไปจนถึงระดับบริหาร และยิ่งองค์กรใหญ่ขึ้นเท่าไหร่ ช่องว่างระหว่างแผนที่กับความเป็นจริงก็ยิ่งกว้างขึ้นเท่านั้น</p>
+    <p>คำถามที่ดีที่สุดที่เราสามารถถามตัวเองได้ทุกครั้งที่หยิบข้อมูลขึ้นมาใช้คือ — <strong>"สิ่งนี้ยังเป็นจริงอยู่หรือเปล่า?"</strong></p>
+  </div>
+</article>
 
 <!-- CHANGELOG -->
 <div class="changelog">
@@ -333,7 +279,7 @@
   <div class="changelog-entries" id="changelog">
     <div class="changelog-entry">
       <span class="date">6 เม.ย. 2026</span>
-      เผยแพร่ EP.1 พร้อม Stacked Experience จากงาน Transformation
+      เผยแพร่ EP.1 พร้อม Stacked Experience จากงาน Business Transformation (ระดับปฏิบัติการ + ระดับบริหาร)
     </div>
   </div>
 </div>
